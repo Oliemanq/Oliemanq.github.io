@@ -1,0 +1,73 @@
+:root{
+    --item-bg: #1e293b;
+    --text-color: #ffffff;
+    --accent-color: #AFFFAF;
+    --accent-color-dark: #64C864;
+}
+
+.vstack {
+    display: flex;
+    flex-direction: column; /* VStack */
+}
+
+.hstack {
+    display: flex;
+    flex-direction: row; /* VStack */
+    justify-content: center; /* Center items horizontally */
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--item-bg), var(--accent-color-dark));
+}
+
+html, body {
+    height: 100%;
+    font-family: "Arial";
+}
+
+header {
+    background-color: var(--item-bg);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+
+}
+
+#github-link, #instagram-link, #linkedin-link {
+    background-color: var(--item-bg);
+    color: var(--text-color);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+
+    padding: 20px;
+    gap: 8px;
+    margin: 20px;
+    border-radius: 10px;
+}
+#About\ Me p {
+    background-color: var(--item-bg);
+    border-color: var(--text-color);
+    color: var(--text-color);
+    
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+#About\ Me h2 {
+    background-color: var(--item-bg);
+    border-color: var(--text-color);
+    color: var(--accent-color);
+
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
