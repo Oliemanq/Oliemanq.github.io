@@ -1,45 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oliver Heisel's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1 class="title bar">
-            Oliver Heisel
-        </h1>
+        <h2 class="header">
+            Oliver Heisel (WIP)
+        </h2>
     </header>
-    
-    <div class="hstack" id="Links">
-        <a href="https://github.com/Oliemanq", id="github-link">
-            <img src="/Icons/github-mark/github-mark-white.png" width="25" height="25">
-            <p>Personal GitHub</p>
-        </a>
-        <a href="https://www.instagram.com/oliemanq456/" id="instagram-link">
-            <img src="/Icons/Instagram/01 Gradient Glyph/Instagram_Glyph_Gradient.png" width="25" height="25">
-            <p>Photography Instagram</p>
-        </a>
-        <a href="https://www.linkedin.com/in/oliver-heisel-683671239/", id="linkedin-link">
-            <img src="/Icons/in-logo/LI-In-Bug.png" width="28" height="25">
-            <p>LinkedIn</p>
-        </a>
-    </div>
 
-    <article id="About Me">
-        <div class="hstack">
-            <h2>About Me</h2>
-            <div class="vstack">
-                <p>
-                    My name is Oliver Heisel and I am an independant software developer and designer, along with being a hobby photographer. I am attending University of Minnesota - Duluth, studying Computer Science.
-                </p>
-                <p> 
-                    My main project right now is DisplayPlus, a third-party app for Even Realities AR Glasses. This is a native SwiftUI app that provides a unique, customizable HUD for the glasses, along with additional features like music playback with Apple Music and iOS Shortcuts support
-                </p>
-            </div>
-        </div>
-    
+    <span id="Links" class="grouping">
+        <span class="button-outside">
+            <a href="https://github.com/Oliemanq" id="github-link" class="link">
+                <img src="Icons/github-mark/github-mark-white.png" class="link-icon">
+                <p>Personal GitHub</p>
+            </a>
+        </span>
+        <span class="button-outside">
+            <a href="https://www.instagram.com/oliemanq456/" id="instagram-link" class="link">
+                <img src="Icons/Instagram/01 Gradient Glyph/Instagram_Glyph_Gradient.png" class="link-icon">
+                <p>Photography Instagram</p>
+            </a>
+        </span>
+        <span class="button-outside">
+            <a href="https://www.linkedin.com/in/oliver-heisel-683671239/" id="linkedin-link" class="link">
+                <img src="Icons/in-logo/LI-In-Bug.png" class="link-icon" id="linkedin-icon">
+                <p>LinkedIn</p>
+            </a>
+        </span>
+    </span>
+
+    <span id="about-me-section" class="grouping">
+        <h2 class="header">About Me</h2>
+        <p>
+            My name is Oliver Heisel and I am an independant software developer and designer, along with being a
+            hobby photographer. I am attending University of Minnesota - Duluth, studying Computer Science.
+        </p>
+        <p>
+            My main project right now is DisplayPlus, a third-party app for Even Realities AR Glasses. This is a
+            native SwiftUI app that provides a unique, customizable HUD for the glasses, along with additional
+            features like music playback with Apple Music and iOS Shortcuts support
+        </p>
+    </span>
+
+    <style>
+        :root {
+            /* Space outside the element's border */
+            --margin: 10px;
+            /* Space between internal items (icon and text) */
+            --gap: 10px;
+            /* Space between the element's border and its content */
+            --padding: 15px;
+
+            --icon-size: 40px;
+
+            --text: #ffffff;
+
+            --button-primary: #b1bcff;
+            --button-secondary: #7b9aff;
+
+            --secondary: #888888;
+            --tertiary: #000;
+
+            --border-radius: 6px;
+            --gap: 5px;
+
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+
+        .grouping {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-outside {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+            color: var(--tertiary);
+
+            box-shadow: 0px 5px 3px 0px var(--tertiary);
+
+            margin: var(--margin);
+            border-radius: calc(var(--border-radius) + var(--margin));
+            background: linear-gradient(0deg, var(--button-secondary), var(--button-primary));
+        }
+
+        .link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--tertiary);
+
+
+            gap: var(--gap);
+            margin: var(--margin);
+            padding: var(--padding);
+
+            border-radius: 500px;
+
+            background: linear-gradient(0deg, var(--button-primary), var(--button-secondary));
+        }
+
+        .link-icon {
+            height: var(--icon-size);
+            width: var(--icon-size);
+        }
+
+        #linkedin-icon {
+            width: calc(var(--icon-size) * 1.15);
+        }
+    </style>
 </body>
+
 </html>
