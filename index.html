@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
     <title>Oliver Heisel's Portfolio</title>
 </head>
 
@@ -36,7 +40,7 @@
     </span>
 
     <span id="about-me-section" class="grouping">
-        <h2 class="header">About Me</h2>
+        <h2 class="header" id="about-me-header">About Me</h2>
         <p>
             My name is Oliver Heisel and I am an independant software developer and designer, along with being a
             hobby photographer. I am attending University of Minnesota - Duluth, studying Computer Science.
@@ -49,6 +53,10 @@
     </span>
 
     <style>
+        * {
+            font-family: "JetBrains Mono", monospace;
+        }
+
         :root {
             /* Space outside the element's border */
             --margin: 10px;
@@ -57,12 +65,13 @@
             /* Space between the element's border and its content */
             --padding: 15px;
 
-            --icon-size: 40px;
+            --icon-size: 30px;
 
             --text: #ffffff;
 
             --button-primary: #b1bcff;
             --button-secondary: #7b9aff;
+            --button-shadow: #6271a8;
 
             --secondary: #888888;
             --tertiary: #000;
@@ -74,11 +83,28 @@
             color: var(--text);
         }
 
-        .grouping {
+        .grouping,
+        .header {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+
+            margin: var(--margin);
+            padding: var(--padding);
+            border-radius: var(--border-radius);
+
+            background: radial-gradient(circle, #baf2ff, #baffba, #babaff);
+            color: #000
+        }
+
+        #about-me-header {
+            background: transparent;
+        }
+
+        #about-me-section {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .button-outside {
@@ -90,10 +116,10 @@
             text-decoration: none;
             color: var(--tertiary);
 
-            box-shadow: 0px 5px 3px 0px var(--tertiary);
+            box-shadow: 0px 8px 3px 1px var(--button-shadow);
 
             margin: var(--margin);
-            border-radius: calc(var(--border-radius) + var(--margin));
+            border-radius: var(--border-radius);
             background: linear-gradient(0deg, var(--button-secondary), var(--button-primary));
         }
 
@@ -108,7 +134,8 @@
 
             gap: var(--gap);
             margin: var(--margin);
-            padding: var(--padding);
+            padding-left: var(--padding);
+            padding-right: var(--padding);
 
             border-radius: 500px;
 
