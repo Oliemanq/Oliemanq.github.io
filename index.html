@@ -13,27 +13,27 @@
 
 <body>
     <header>
-        <h2 class="header">
+        <h2 class="title">
             Oliver Heisel (WIP)
         </h2>
     </header>
 
     <span id="Links" class="grouping">
         <span class="button-outside">
-            <a href="https://github.com/Oliemanq" id="github-link" class="link">
-                <img src="Icons/github-mark/github-mark-white.png" class="link-icon">
+            <a href="https://github.com/Oliemanq" id="github-link" class="button">
+                <img src="Icons/github-mark/github-mark-white.png" class="button-icon">
                 <p>Personal GitHub</p>
             </a>
         </span>
         <span class="button-outside">
-            <a href="https://www.instagram.com/oliemanq456/" id="instagram-link" class="link">
-                <img src="Icons/Instagram/01 Gradient Glyph/Instagram_Glyph_Gradient.png" class="link-icon">
+            <a href="https://www.instagram.com/oliemanq456/" id="instagram-link" class="button">
+                <img src="Icons/Instagram/01 Gradient Glyph/Instagram_Glyph_Gradient.png" class="button-icon">
                 <p>Photography Instagram</p>
             </a>
         </span>
         <span class="button-outside">
-            <a href="https://www.linkedin.com/in/oliver-heisel-683671239/" id="linkedin-link" class="link">
-                <img src="Icons/in-logo/LI-In-Bug.png" class="link-icon" id="linkedin-icon">
+            <a href="https://www.linkedin.com/in/oliver-heisel-683671239/" id="linkedin-link" class="button">
+                <img src="Icons/in-logo/LI-In-Bug.png" id="linkedin-icon" class="button-icon">
                 <p>LinkedIn</p>
             </a>
         </span>
@@ -45,11 +45,25 @@
             My name is Oliver Heisel and I am an independant software developer and designer, along with being a
             hobby photographer. I am attending University of Minnesota - Duluth, studying Computer Science.
         </p>
-        <p>
-            My main project right now is DisplayPlus, a third-party app for Even Realities AR Glasses. This is a
-            native SwiftUI app that provides a unique, customizable HUD for the glasses, along with additional
-            features like music playback with Apple Music and iOS Shortcuts support
-        </p>
+    </span>
+    <span class="grouping">
+        <h2 class="header">Projects</h2>
+        <span class="project">
+            <h4 class="project-header">DispayPlus</h4>
+            <p class="project-text">
+                a third-party app for Even Realities AR Glasses. This is a native SwiftUI app that provides
+                a unique, customizable HUD for the glasses, along with additional features like music playback with
+                Apple Music and iOS Shortcuts support
+            </p>
+        </span>
+        <span class="project">
+            <h4 class="project-header">Even Hub</h4>
+            <p class="project-text">
+                Assisted in developing the Even Hub for the Even Realities G2 glasses. I aided their development by
+                providing feedback along it's life cycle, along with developing the predicessor to DisplayPlus,
+                available in-app for the G2's
+            </p>
+        </span>
     </span>
 
     <style>
@@ -67,24 +81,21 @@
 
             --icon-size: 30px;
 
-            --text: #ffffff;
-
-            --button-primary: #b1bcff;
-            --button-secondary: #7b9aff;
-            --button-shadow: #6271a8;
-
-            --secondary: #888888;
-            --tertiary: #000;
+            --text: #090d14;
+            --background: #f2f5fa;
+            --primary: #4a7ac2;
+            --secondary: #8fafde;
+            --accent: #6392d8;
 
             --border-radius: 6px;
             --gap: 5px;
 
-            background-color: var(--secondary);
+            background-color: var(--background);
             color: var(--text);
         }
 
         .grouping,
-        .header {
+        .title {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -94,18 +105,37 @@
             padding: var(--padding);
             border-radius: var(--border-radius);
 
-            background: radial-gradient(circle, #baf2ff, #baffba, #babaff);
-            color: #000
-        }
+            background: var(--secondary);
+            color: var(--text);
 
-        #about-me-header {
-            background: transparent;
-        }
-
-        #about-me-section {
             flex-direction: column;
             align-items: flex-start;
         }
+
+        #Links {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .project {
+            padding-left: 3%;
+            padding-top: 2%;
+        }
+
+        .project-header {
+            width: 10%;
+            display: contents;
+        }
+
 
         .button-outside {
             display: flex;
@@ -114,22 +144,19 @@
             justify-content: center;
 
             text-decoration: none;
-            color: var(--tertiary);
-
-            box-shadow: 0px 8px 3px 1px var(--button-shadow);
+            box-shadow: 0px 8px 3px 1px var(--primary);
 
             margin: var(--margin);
             border-radius: var(--border-radius);
-            background: linear-gradient(0deg, var(--button-secondary), var(--button-primary));
+            background: linear-gradient(180deg, var(--primary), var(--accent));
         }
 
-        .link {
+        .button {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: var(--tertiary);
 
 
             gap: var(--gap);
@@ -139,10 +166,11 @@
 
             border-radius: 500px;
 
-            background: linear-gradient(0deg, var(--button-primary), var(--button-secondary));
+            background: linear-gradient(0deg, var(--primary), var(--accent));
+            color: var(--text);
         }
 
-        .link-icon {
+        .button-icon {
             height: var(--icon-size);
             width: var(--icon-size);
         }
